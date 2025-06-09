@@ -2,7 +2,6 @@ import sqlite3
 from pathlib import Path
 import pandas as pd
 import streamlit as st
-import base64
 
 # --- CONFIGURAÇÕES INICIAIS ---------------------------------------------------
 st.set_page_config(page_title="Matriz RACI", page_icon="🗂️", layout="wide")
@@ -185,19 +184,4 @@ if not df.empty:
         delete_row(activity_id_to_delete)
         st.success("Atividade excluída com sucesso. Atualize a página para ver a mudança.")
 
-# Botão de download simplificado, pequeno e à esquerda
-if not df.empty:
-    out = Path("matriz_raci.xlsx")
-    df.to_excel(out, index=False)
-    b64 = base64.b64encode(out.read_bytes()).decode()
-    st.markdown(f"""
-    <div style="margin-top:20px;margin-bottom:10px;text-align:left">
-        <a href="data:application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;base64,{b64}" 
-           download="{out.name}" 
-           style="background-color:#2E3192;padding:8px 14px;border-radius:6px;color:white;text-decoration:none;font-weight:600;font-size:0.85rem;">
-           📁 Download Excel
-        </a>
-    </div>
-    """, unsafe_allow_html=True)
-
-st.caption("© 2025 —  Matriz RACI Rezende Energia")
+st.caption("© 2025 — Matriz RACI Rezende Energia")
