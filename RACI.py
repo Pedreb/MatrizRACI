@@ -163,7 +163,7 @@ st.markdown(
         f"<span style='background:{COLOR_MAP[c]}'>"
         f"{c} – {'Aprovador' if c=='A' else 'Responsável' if c=='R' else 'Consultado' if c=='C' else 'Informado'}"
         "</span>"
-        for c in ["A", "R", "C", "I"]
+        for c in ["Aprovador", "Responsável", "Consultado", "Informado"]
     )
     + "</div>",
     unsafe_allow_html=True,
