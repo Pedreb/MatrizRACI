@@ -7,7 +7,7 @@ import streamlit as st
 st.set_page_config(page_title="Matriz RACI", page_icon="🗂️", layout="wide")
 
 DB_FILE   = "raci.db"
-LOGO_PATH = r"C:\\Users\\Pedro Curry\\OneDrive\\Área de Trabalho\\Rezende\\MARKETING\\__sitelogo__Logo Rezende.png"
+LOGO_PATH = "__sitelogo__Logo Rezende.png"
 
 ROLES = ["", "R", "A", "C", "I"]         # Valores válidos para cada responsável
 HEADERS = [
